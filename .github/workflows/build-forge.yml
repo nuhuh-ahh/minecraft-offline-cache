@@ -7,7 +7,6 @@ on:
       - 'templates/forge-1.8.9/**'
       - 'templates/forge-1.12.0/**'
       - 'templates/forge-1.12.1/**'
-      - 'templates/forge-1.20.1/**'
       - '.github/workflows/build-forge.yml'
       - '.github/scripts/package_release.py'
 
@@ -19,17 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 3
       matrix:
-        include:
-          - version: '1.8.9'
-            java: '8'
-          - version: '1.12.0'
-            java: '8'
-          - version: '1.12.1'
-            java: '8'
-          - version: '1.20.1'
-            java: '17'
+        version: ['1.8.9', '1.12.0', '1.12.1']
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -40,29 +31,29 @@ jobs:
           distribution: 'temurin'
           java-version: '8'
 
-      - name: Set up JDK 17 (Temurin)
+      - name: Set up JDK 25 (Temurin)
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '25'
 
       - name: Grant execute permission for gradlew
         run: chmod +x templates/forge-${{ matrix.version }}/gradlew
 
       - name: Build Forge ${{ matrix.version }} and Cache All Dependencies
         working-directory: templates/forge-${{ matrix.version }}
-        run: ./gradlew build --no-daemon
+        run: ./gradlew downloadFernflower build -Dorg.gradle.java.installations.paths=$JAVA_HOME_8_X64 --no-daemon
 
       - name: Verify Offline Build on Linux x64
         working-directory: templates/forge-${{ matrix.version }}
-        run: ./gradlew clean build --offline --stacktrace --no-daemon
+        run: ./gradlew build --offline --stacktrace -Dorg.gradle.java.installations.paths=$JAVA_HOME_8_X64 --no-daemon
 
       - name: Package Linux Cache into <=94MB Chunks and All-in-One Zip
         run: |
           python3 .github/scripts/package_release.py \
             --loader Forge \
             --mc-version ${{ matrix.version }} \
-            --java-version ${{ matrix.java }} \
+            --java-version 8 \
             --project-dir templates/forge-${{ matrix.version }} \
             --dist-dir dist
 
@@ -72,5 +63,5 @@ jobs:
         run: |
           gh release create v${{ matrix.version }}-forge dist/* \
             --title "Forge ${{ matrix.version }} Linux x64 Offline Cache" \
-            --notes "Pre-cached Forge ${{ matrix.version }} with Temurin JDK ${{ matrix.java }} Linux x64 in <=94MB zip chunks for Gemini Web." \
+            --notes "Pre-cached Forge ${{ matrix.version }} with Temurin JDK 8 Linux x64 in <=94MB zip chunks for Gemini Web." \
             || gh release upload v${{ matrix.version }}-forge dist/* --clobber

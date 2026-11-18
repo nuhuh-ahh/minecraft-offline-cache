@@ -42,12 +42,12 @@ for tag, cfg in RETRO_CONFIGS.items():
 rootProject.name = 'examplemod'
 ''')
 
-    # gradle-wrapper.properties using Gradle 8.8
+    # gradle-wrapper.properties using Gradle 9.8.2
     wrap_prop = os.path.join(target, 'gradle', 'wrapper', 'gradle-wrapper.properties')
     with open(wrap_prop, 'w', encoding='utf-8') as f:
         f.write('''distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
-distributionUrl=https\\://services.gradle.org/distributions/gradle-8.8-bin.zip
+distributionUrl=https\\://services.gradle.org/distributions/gradle-9.8.2-bin.zip
 networkTimeout=10000
 validateDistributionUrl=true
 zipStoreBase=GRADLE_USER_HOME
