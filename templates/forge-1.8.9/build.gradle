@@ -1,16 +1,11 @@
 plugins {
     id 'dev.architectury.loom' version '1.7-SNAPSHOT'
-    id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'java'
-}
-
-architectury {
-    platform = "forge"
 }
 
 version = '1.0.0'
 group = 'com.example.modid'
-archivesBaseName = 'examplemod'
+base.archivesName = 'examplemod'
 
 repositories {
     mavenCentral()
