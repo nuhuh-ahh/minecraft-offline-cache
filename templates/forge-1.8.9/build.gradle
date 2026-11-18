@@ -1,29 +1,28 @@
 plugins {
-    id 'dev.architectury.loom' version '1.7-SNAPSHOT'
     id 'java'
+    id 'gg.essential.loom' version '0.10.0.+'
 }
 
+base.archivesName = 'examplemod'
 version = '1.0.0'
 group = 'com.example.modid'
-base.archivesName = 'examplemod'
 
 repositories {
     mavenCentral()
-    maven { url = "https://maven.architectury.dev/" }
-    maven { url = "https://maven.fabricmc.net/" }
-    maven { url = "https://maven.minecraftforge.net/" }
+    maven { url = 'https://repo.essential.gg/repository/maven-public/' }
+    maven { url = 'https://maven.minecraftforge.net/' }
 }
 
 dependencies {
     minecraft "com.mojang:minecraft:1.8.9"
-    mappings loom.officialMojangMappings()
+    mappings "de.oceanlabs.mcp:mcp_stable:22-1.8.9"
     forge "net.minecraftforge:forge:1.8.9-11.15.1.2318-1.8.9"
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
 }
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(8)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
 }
