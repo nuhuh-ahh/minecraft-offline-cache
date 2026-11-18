@@ -1,14 +1,9 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.54'
-    }
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '7.0.40'
 }
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'maven-publish'
 
 version = '1.0.0'
 group = 'com.example.modid'
@@ -16,40 +11,46 @@ archivesBaseName = 'examplemod'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
-repositories {
-    mavenCentral()
-    maven { url = 'https://maven.minecraftforge.net' }
-}
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 minecraft {
-    mappings channel: 'official', version: '26.2'
     runs {
-        client {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            mods {
-                examplemod {
-                    source sourceSets.main
-                }
-            }
+        configureEach {
+            workingDir = layout.projectDirectory.dir('run')
+            systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
+            systemProperty 'forge.enabledGameTestNamespaces', 'examplemod'
+        }
+        register('client')
+        register('server') {
+            args '--nogui'
         }
     }
 }
 
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    mavenCentral()
+}
+
 dependencies {
-    minecraft 'net.minecraftforge:forge:26.2-65.1.6'
+    implementation minecraft.dependency('net.minecraftforge:forge:26.2-65.1.6')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
 }
 
 jar {
     manifest {
         attributes([
-            "Specification-Title": "examplemod",
-            "Specification-Vendor": "examplemods",
-            "Specification-Version": "1",
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemods"
+            'Specification-Title': 'examplemod',
+            'Specification-Vendor': 'examplemods',
+            'Specification-Version': '1',
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.version,
+            'Implementation-Vendor': 'examplemods'
         ])
     }
 }

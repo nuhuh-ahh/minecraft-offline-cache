@@ -57,11 +57,11 @@ jobs:
 
       - name: Build Forge ${{ matrix.version }} and Cache All Dependencies
         working-directory: templates/forge-${{ matrix.version }}
-        run: ./gradlew build --no-daemon
+        run: ./gradlew build --no-daemon -Porg.gradle.java.installations.paths="${JAVA_HOME_25_X64:-$JAVA_HOME}"
 
       - name: Verify Offline Build on Linux x64
         working-directory: templates/forge-${{ matrix.version }}
-        run: ./gradlew clean build --offline --stacktrace --no-daemon
+        run: ./gradlew clean build --offline --stacktrace --no-daemon -Porg.gradle.java.installations.paths="${JAVA_HOME_25_X64:-$JAVA_HOME}"
 
       - name: Package Linux Cache into <=94MB Chunks and All-in-One Zip
         run: |
