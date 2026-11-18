@@ -1,0 +1,135 @@
+name: Build Forge Batch 3 Caches
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'templates/forge-1.14.2/**'
+      - 'templates/forge-1.14.3/**'
+      - 'templates/forge-1.15.1/**'
+      - 'templates/forge-1.16.1/**'
+      - 'templates/forge-1.16.2/**'
+      - 'templates/forge-1.16.3/**'
+      - 'templates/forge-1.16.4/**'
+      - 'templates/forge-1.18.1/**'
+      - 'templates/forge-1.19.1/**'
+      - 'templates/forge-1.19.3/**'
+      - 'templates/forge-1.20.2/**'
+      - 'templates/forge-1.20.3/**'
+      - 'templates/forge-1.21.3/**'
+      - 'templates/forge-1.21.4/**'
+      - 'templates/forge-1.21.5/**'
+      - 'templates/forge-1.21.6/**'
+      - 'templates/forge-1.21.7/**'
+      - 'templates/forge-1.21.8/**'
+      - 'templates/forge-1.21.9/**'
+      - 'templates/forge-1.21.10/**'
+      - 'templates/forge-1.21.11/**'
+      - 'templates/forge-26.1/**'
+      - 'templates/forge-26.1.1/**'
+      - 'templates/forge-26.1.2/**'
+      - 'templates/forge-26.2/**'
+      - 'templates/forge-26.3/**'
+      - '.github/workflows/build-forge-batch3.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 15
+      matrix:
+        include:
+          - version: '1.14.2'
+            java: '8'
+          - version: '1.14.3'
+            java: '8'
+          - version: '1.15.1'
+            java: '8'
+          - version: '1.16.1'
+            java: '8'
+          - version: '1.16.2'
+            java: '8'
+          - version: '1.16.3'
+            java: '8'
+          - version: '1.16.4'
+            java: '8'
+          - version: '1.18.1'
+            java: '17'
+          - version: '1.19.1'
+            java: '17'
+          - version: '1.19.3'
+            java: '17'
+          - version: '1.20.2'
+            java: '17'
+          - version: '1.20.3'
+            java: '17'
+          - version: '1.21.3'
+            java: '21'
+          - version: '1.21.4'
+            java: '21'
+          - version: '1.21.5'
+            java: '21'
+          - version: '1.21.6'
+            java: '21'
+          - version: '1.21.7'
+            java: '21'
+          - version: '1.21.8'
+            java: '21'
+          - version: '1.21.9'
+            java: '21'
+          - version: '1.21.10'
+            java: '21'
+          - version: '1.21.11'
+            java: '21'
+          - version: '26.1'
+            java: '21'
+          - version: '26.1.1'
+            java: '21'
+          - version: '26.1.2'
+            java: '21'
+          - version: '26.2'
+            java: '21'
+          - version: '26.3'
+            java: '21'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ matrix.java }} (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ matrix.java }}
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x templates/forge-${{ matrix.version }}/gradlew
+
+      - name: Build Forge ${{ matrix.version }} and Cache All Dependencies
+        working-directory: templates/forge-${{ matrix.version }}
+        run: ./gradlew build --no-daemon
+
+      - name: Verify Offline Build on Linux x64
+        working-directory: templates/forge-${{ matrix.version }}
+        run: ./gradlew clean build --offline --stacktrace --no-daemon
+
+      - name: Package Linux Cache into <=94MB Chunks and All-in-One Zip
+        run: |
+          python3 .github/scripts/package_release.py \
+            --loader Forge \
+            --mc-version ${{ matrix.version }} \
+            --java-version ${{ matrix.java }} \
+            --project-dir templates/forge-${{ matrix.version }} \
+            --dist-dir dist
+
+      - name: Create or Update GitHub Release with Artifacts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v${{ matrix.version }}-forge dist/* \
+            --title "Forge ${{ matrix.version }} Linux x64 Offline Cache" \
+            --notes "Pre-cached Forge ${{ matrix.version }} with Temurin JDK ${{ matrix.java }} Linux x64 in <=94MB zip chunks for Gemini Web." \
+            || gh release upload v${{ matrix.version }}-forge dist/* --clobber
