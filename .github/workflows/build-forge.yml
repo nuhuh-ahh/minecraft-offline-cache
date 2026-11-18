@@ -7,8 +7,6 @@ on:
       - 'templates/forge-1.8.9/**'
       - 'templates/forge-1.12.0/**'
       - 'templates/forge-1.12.1/**'
-      - 'templates/forge-1.16.5/**'
-      - 'templates/forge-1.18.2/**'
       - 'templates/forge-1.20.1/**'
       - '.github/workflows/build-forge.yml'
       - '.github/scripts/package_release.py'
@@ -21,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 3
+      max-parallel: 4
       matrix:
         include:
           - version: '1.8.9'
@@ -30,10 +28,6 @@ jobs:
             java: '8'
           - version: '1.12.1'
             java: '8'
-          - version: '1.16.5'
-            java: '8'
-          - version: '1.18.2'
-            java: '17'
           - version: '1.20.1'
             java: '17'
     steps:

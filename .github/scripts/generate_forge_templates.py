@@ -22,9 +22,37 @@ for tag, cfg in RETRO_CONFIGS.items():
     shutil.copy(os.path.join(RETRO_BASE, 'gradlew'), os.path.join(target, 'gradlew'))
     shutil.copy(os.path.join(RETRO_BASE, 'gradlew.bat'), os.path.join(target, 'gradlew.bat'))
 
-    # settings.gradle
+    # settings.gradle with pluginManagement
     with open(os.path.join(target, 'settings.gradle'), 'w', encoding='utf-8') as f:
-        f.write("rootProject.name = 'examplemod'\n")
+        f.write('''pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        maven {
+            name = 'GTNH Maven'
+            url = 'https://nexus.gtnewhorizons.com/repository/public/'
+        }
+        maven {
+            name = 'CleanroomMC Maven'
+            url = 'https://maven.cleanroommc.com'
+        }
+    }
+}
+
+rootProject.name = 'examplemod'
+''')
+
+    # gradle-wrapper.properties using Gradle 8.8
+    wrap_prop = os.path.join(target, 'gradle', 'wrapper', 'gradle-wrapper.properties')
+    with open(wrap_prop, 'w', encoding='utf-8') as f:
+        f.write('''distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\\://services.gradle.org/distributions/gradle-8.8-bin.zip
+networkTimeout=10000
+validateDistributionUrl=true
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+''')
 
     # gradle.properties
     with open(os.path.join(target, 'gradle.properties'), 'w', encoding='utf-8') as f:
@@ -139,45 +167,50 @@ public class ExampleMod {
 ''')
     print(f'Configured Retro Forge template for {tag}')
 
-# 2. Modern Forge: 1.16.5, 1.18.2, 1.20.1
-MODERN_FORGE_CONFIGS = {
-    '1.16.5': {'fg_ver': '5.1.77', 'forge': '1.16.5-36.2.34', 'java': '8', 'mapping': '1.16.5'},
-    '1.18.2': {'fg_ver': '5.1.77', 'forge': '1.18.2-40.2.21', 'java': '17', 'mapping': '1.18.2'},
-    '1.20.1': {'fg_ver': '6.0.29', 'forge': '1.20.1-47.3.0', 'java': '17', 'mapping': '1.20.1'}
-}
+# 2. Modern Forge 1.20.1
+target = 'templates/forge-1.20.1'
+if os.path.exists(target):
+    shutil.rmtree(target)
+os.makedirs(target, exist_ok=True)
 
-for tag, cfg in MODERN_FORGE_CONFIGS.items():
-    target = f'templates/forge-{tag}'
-    if os.path.exists(target):
-        shutil.rmtree(target)
-    os.makedirs(target, exist_ok=True)
+# Copy wrapper from MODERN_FORGE_BASE
+shutil.copytree(os.path.join(MODERN_FORGE_BASE, 'gradle'), os.path.join(target, 'gradle'))
+shutil.copy(os.path.join(MODERN_FORGE_BASE, 'gradlew'), os.path.join(target, 'gradlew'))
+shutil.copy(os.path.join(MODERN_FORGE_BASE, 'gradlew.bat'), os.path.join(target, 'gradlew.bat'))
 
-    # Copy wrapper from MODERN_FORGE_BASE
-    shutil.copytree(os.path.join(MODERN_FORGE_BASE, 'gradle'), os.path.join(target, 'gradle'))
-    shutil.copy(os.path.join(MODERN_FORGE_BASE, 'gradlew'), os.path.join(target, 'gradlew'))
-    shutil.copy(os.path.join(MODERN_FORGE_BASE, 'gradlew.bat'), os.path.join(target, 'gradlew.bat'))
+# Upgrade wrapper to Gradle 8.8 for FG6
+wrap_prop = os.path.join(target, 'gradle', 'wrapper', 'gradle-wrapper.properties')
+with open(wrap_prop, 'w', encoding='utf-8') as f:
+    f.write('''distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\\://services.gradle.org/distributions/gradle-8.8-bin.zip
+networkTimeout=10000
+validateDistributionUrl=true
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+''')
 
-    # settings.gradle
-    with open(os.path.join(target, 'settings.gradle'), 'w', encoding='utf-8') as f:
-        f.write("rootProject.name = 'examplemod'\n")
+# settings.gradle
+with open(os.path.join(target, 'settings.gradle'), 'w', encoding='utf-8') as f:
+    f.write("rootProject.name = 'examplemod'\n")
 
-    # gradle.properties
-    with open(os.path.join(target, 'gradle.properties'), 'w', encoding='utf-8') as f:
-        f.write('''org.gradle.jvmargs=-Xmx2G
+# gradle.properties
+with open(os.path.join(target, 'gradle.properties'), 'w', encoding='utf-8') as f:
+    f.write('''org.gradle.jvmargs=-Xmx2G
 org.gradle.daemon=false
 ''')
 
-    # build.gradle
-    with open(os.path.join(target, 'build.gradle'), 'w', encoding='utf-8') as f:
-        f.write(f'''buildscript {{
-    repositories {{
-        maven {{ url = 'https://maven.minecraftforge.net' }}
+# build.gradle
+with open(os.path.join(target, 'build.gradle'), 'w', encoding='utf-8') as f:
+    f.write('''buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
         mavenCentral()
-    }}
-    dependencies {{
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '{cfg['fg_ver']}'
-    }}
-}}
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.29'
+    }
+}
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
 
@@ -185,52 +218,52 @@ version = '1.0.0'
 group = 'com.example.modid'
 archivesBaseName = 'examplemod'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of({cfg['java']})
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
-repositories {{
+repositories {
     mavenCentral()
-    maven {{ url = 'https://maven.minecraftforge.net' }}
-}}
+    maven { url = 'https://maven.minecraftforge.net' }
+}
 
-minecraft {{
-    mappings channel: 'official', version: '{cfg['mapping']}'
-    runs {{
-        client {{
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    runs {
+        client {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            mods {{
-                examplemod {{
+            mods {
+                examplemod {
                     source sourceSets.main
-                }}
-            }}
-        }}
-    }}
-}}
+                }
+            }
+        }
+    }
+}
 
-dependencies {{
-    minecraft 'net.minecraftforge:forge:{cfg['forge']}'
-}}
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.3.0'
+}
 
-jar {{
-    manifest {{
+jar {
+    manifest {
         attributes([
             "Specification-Title": "examplemod",
             "Specification-Vendor": "examplemods",
             "Specification-Version": "1",
             "Implementation-Title": project.name,
-            "Implementation-Version": "${{version}}",
+            "Implementation-Version": "${version}",
             "Implementation-Vendor" :"examplemods"
         ])
-    }}
-}}
+    }
+}
 ''')
 
-    # src/main/resources/META-INF/mods.toml
-    meta_dir = os.path.join(target, 'src', 'main', 'resources', 'META-INF')
-    os.makedirs(meta_dir, exist_ok=True)
-    with open(os.path.join(meta_dir, 'mods.toml'), 'w', encoding='utf-8') as f:
-        f.write(f'''modLoader="javafml"
+# src/main/resources/META-INF/mods.toml
+meta_dir = os.path.join(target, 'src', 'main', 'resources', 'META-INF')
+os.makedirs(meta_dir, exist_ok=True)
+with open(os.path.join(meta_dir, 'mods.toml'), 'w', encoding='utf-8') as f:
+    f.write('''modLoader="javafml"
 loaderVersion="[1,)"
 license="CC0-1.0"
 
@@ -238,23 +271,23 @@ license="CC0-1.0"
 modId="examplemod"
 version="1.0.0"
 displayName="Example Mod"
-description="Pre-cached Forge {tag} template"
+description="Pre-cached Forge 1.20.1 template"
 ''')
 
-    # src/main/java/com/example/modid/ExampleMod.java
-    java_dir = os.path.join(target, 'src', 'main', 'java', 'com', 'example', 'modid')
-    os.makedirs(java_dir, exist_ok=True)
-    with open(os.path.join(java_dir, 'ExampleMod.java'), 'w', encoding='utf-8') as f:
-        f.write(f'''package com.example.modid;
+# src/main/java/com/example/modid/ExampleMod.java
+java_dir = os.path.join(target, 'src', 'main', 'java', 'com', 'example', 'modid')
+os.makedirs(java_dir, exist_ok=True)
+with open(os.path.join(java_dir, 'ExampleMod.java'), 'w', encoding='utf-8') as f:
+    f.write('''package com.example.modid;
 
 import net.minecraftforge.fml.common.Mod;
 
 @Mod("examplemod")
-public class ExampleMod {{
-    public ExampleMod() {{
-        System.out.println("Hello Modern Forge {tag}!");
-    }}
-}}
+public class ExampleMod {
+    public ExampleMod() {
+        System.out.println("Hello Modern Forge 1.20.1!");
+    }
+}
 ''')
 
-    print(f'Configured Modern Forge template for {tag} (Java {cfg["java"]})')
+print('Configured Modern Forge template for 1.20.1 (Java 17, Gradle 8.8, FG 6.0.29)')
