@@ -2,15 +2,8 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         mavenCentral()
-        maven {
-            name = 'GTNH Maven'
-            url = 'https://nexus.gtnewhorizons.com/repository/public/'
-        }
-        maven {
-            name = 'CleanroomMC Maven'
-            url = 'https://maven.cleanroommc.com'
-        }
+        maven { url = 'https://maven.architectury.dev/' }
+        maven { url = 'https://maven.minecraftforge.net/' }
     }
 }
-
 rootProject.name = 'examplemod'

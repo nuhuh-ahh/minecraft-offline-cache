@@ -1,14 +1,11 @@
-name: Build Forge Caches
+name: Build Forge 1.8.9 Cache
 
 on:
   workflow_dispatch:
   push:
     paths:
       - 'templates/forge-1.8.9/**'
-      - 'templates/forge-1.12.0/**'
-      - 'templates/forge-1.12.1/**'
       - '.github/workflows/build-forge.yml'
-      - '.github/scripts/package_release.py'
 
 permissions:
   contents: write
@@ -16,11 +13,6 @@ permissions:
 jobs:
   build-and-package:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      max-parallel: 3
-      matrix:
-        version: ['1.8.9', '1.12.0', '1.12.1']
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -31,37 +23,37 @@ jobs:
           distribution: 'temurin'
           java-version: '8'
 
-      - name: Set up JDK 25 (Temurin)
+      - name: Set up JDK 17 (Temurin)
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '25'
+          java-version: '17'
 
       - name: Grant execute permission for gradlew
-        run: chmod +x templates/forge-${{ matrix.version }}/gradlew
+        run: chmod +x templates/forge-1.8.9/gradlew
 
-      - name: Build Forge ${{ matrix.version }} and Cache All Dependencies
-        working-directory: templates/forge-${{ matrix.version }}
-        run: ./gradlew downloadFernflower build -Dorg.gradle.java.installations.paths=$JAVA_HOME_8_X64 --no-daemon
+      - name: Build Forge 1.8.9 and Cache All Dependencies
+        working-directory: templates/forge-1.8.9
+        run: ./gradlew build --no-daemon
 
       - name: Verify Offline Build on Linux x64
-        working-directory: templates/forge-${{ matrix.version }}
-        run: ./gradlew build --offline --stacktrace -Dorg.gradle.java.installations.paths=$JAVA_HOME_8_X64 --no-daemon
+        working-directory: templates/forge-1.8.9
+        run: ./gradlew build --offline --stacktrace --no-daemon
 
       - name: Package Linux Cache into <=94MB Chunks and All-in-One Zip
         run: |
           python3 .github/scripts/package_release.py \
             --loader Forge \
-            --mc-version ${{ matrix.version }} \
+            --mc-version 1.8.9 \
             --java-version 8 \
-            --project-dir templates/forge-${{ matrix.version }} \
+            --project-dir templates/forge-1.8.9 \
             --dist-dir dist
 
       - name: Create or Update GitHub Release with Artifacts
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create v${{ matrix.version }}-forge dist/* \
-            --title "Forge ${{ matrix.version }} Linux x64 Offline Cache" \
-            --notes "Pre-cached Forge ${{ matrix.version }} with Temurin JDK 8 Linux x64 in <=94MB zip chunks for Gemini Web." \
-            || gh release upload v${{ matrix.version }}-forge dist/* --clobber
+          gh release create v1.8.9-forge dist/* \
+            --title "Forge 1.8.9 Linux x64 Offline Cache" \
+            --notes "Pre-cached Forge 1.8.9 with Temurin JDK 8 Linux x64 in <=94MB zip chunks for Gemini Web." \
+            || gh release upload v1.8.9-forge dist/* --clobber

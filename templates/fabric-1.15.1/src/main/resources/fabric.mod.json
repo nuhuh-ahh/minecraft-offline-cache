@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "example-mod",
+  "version": "${version}",
+  "name": "Example Mod",
+  "description": "Pre-cached Fabric 1.15.1 template",
+  "authors": ["Developer"],
+  "contact": {},
+  "license": "MIT",
+  "entrypoints": {
+    "main": [
+      "com.example.ExampleMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.15.1"
+  }
+}
