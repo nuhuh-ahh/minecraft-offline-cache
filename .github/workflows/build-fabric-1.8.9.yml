@@ -1,0 +1,51 @@
+name: Build Fabric 1.8.9 Linux x64 Cache
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'templates/fabric-1.8.9/**'
+      - '.github/workflows/build-fabric-1.8.9.yml'
+      - '.github/scripts/package_fabric_1_8_9.py'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 8 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '8'
+
+      - name: Set up JDK 21 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x templates/fabric-1.8.9/gradlew
+
+      - name: Build Fabric 1.8.9 and Cache All Dependencies
+        working-directory: templates/fabric-1.8.9
+        run: ./gradlew build --no-daemon
+
+      - name: Verify Offline Build on Linux x64
+        working-directory: templates/fabric-1.8.9
+        run: ./gradlew clean build --offline --stacktrace --no-daemon
+
+      - name: Package Linux Cache into <=94MB Chunks
+        run: python3 .github/scripts/package_fabric_1_8_9.py
+
+      - name: Create GitHub Release with Artifacts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v1.8.9-fabric dist/* --title "Fabric 1.8.9 Linux x64 Offline Cache" --notes "Pre-cached Legacy Fabric 1.8.9 with Temurin JDK 8 Linux x64 in <=94MB zip chunks for Gemini Web."
