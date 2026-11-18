@@ -20,13 +20,6 @@ on:
       - 'templates/fabric-1.20/**'
       - 'templates/fabric-1.20.2/**'
       - 'templates/fabric-1.20.3/**'
-      - 'templates/fabric-1.20.5/**'
-      - 'templates/fabric-1.20.6/**'
-      - 'templates/fabric-1.21/**'
-      - 'templates/fabric-1.21.2/**'
-      - 'templates/fabric-1.21.3/**'
-      - 'templates/fabric-1.21.4/**'
-      - 'templates/fabric-1.21.10/**'
       - '.github/workflows/build-fabric-batch2.yml'
 
 permissions:
@@ -37,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 12
+      max-parallel: 16
       matrix:
         include:
           - version: '1.14'
@@ -72,29 +65,33 @@ jobs:
             java: '17'
           - version: '1.20.3'
             java: '17'
-          - version: '1.20.5'
-            java: '21'
-          - version: '1.20.6'
-            java: '21'
-          - version: '1.21'
-            java: '21'
-          - version: '1.21.2'
-            java: '21'
-          - version: '1.21.3'
-            java: '21'
-          - version: '1.21.4'
-            java: '21'
-          - version: '1.21.10'
-            java: '21'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK ${{ matrix.java }} (Temurin)
+      - name: Set up JDK 8 (Temurin)
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: ${{ matrix.java }}
+          java-version: '8'
+
+      - name: Set up JDK 16 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '16'
+
+      - name: Set up JDK 17 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up JDK 21 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
 
       - name: Grant execute permission for gradlew
         run: chmod +x templates/fabric-${{ matrix.version }}/gradlew
