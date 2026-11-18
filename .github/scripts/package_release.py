@@ -13,7 +13,8 @@ JDK_URLS = {
     '8': 'https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u512-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u512b09.tar.gz',
     '16': 'https://github.com/adoptium/temurin16-binaries/releases/download/jdk-16.0.2%2B7/OpenJDK16U-jdk_x64_linux_hotspot_16.0.2_7.tar.gz',
     '17': 'https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.14%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.14_7.tar.gz',
-    '21': 'https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.6%2B7/OpenJDK21U-jdk_x64_linux_hotspot_21.0.6_7.tar.gz'
+    '21': 'https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.6%2B7/OpenJDK21U-jdk_x64_linux_hotspot_21.0.6_7.tar.gz',
+    '25': 'https://download.oracle.com/java/25/latest/jdk-25_linux-x64_bin.tar.gz'
 }
 
 def get_sha256(filepath):
@@ -38,7 +39,7 @@ def main():
     parser = argparse.ArgumentParser(description='Universal Minecraft Cache Packager for Gemini Web')
     parser.add_argument('--loader', required=True, choices=['Fabric', 'Forge'], help='Mod loader')
     parser.add_argument('--mc-version', required=True, help='Minecraft version, e.g. 1.9.4')
-    parser.add_argument('--java-version', required=True, choices=['8', '16', '17', '21'], help='Java version')
+    parser.add_argument('--java-version', required=True, choices=['8', '16', '17', '21', '25'], help='Java version')
     parser.add_argument('--project-dir', required=True, help='Path to project template directory')
     parser.add_argument('--dist-dir', default='dist', help='Output distribution directory')
 

@@ -34,7 +34,7 @@ jobs:
 
       - name: Build Forge 1.8.9 and Cache All Dependencies
         working-directory: templates/forge-1.8.9
-        run: ./gradlew build --no-daemon
+        run: ./gradlew build --stacktrace --no-daemon
 
       - name: Verify Offline Build on Linux x64
         working-directory: templates/forge-1.8.9
