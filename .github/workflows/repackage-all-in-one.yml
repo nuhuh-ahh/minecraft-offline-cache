@@ -1,0 +1,63 @@
+name: Repackage All-In-One Zips for 1.21.11 Fabric and 1.12.2 Forge
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/repackage-all-in-one.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  repackage:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - tag: 'v1.21.11-fabric'
+            loader: 'Fabric'
+            version: '1.21.11'
+          - tag: 'v1.12.2-forge'
+            loader: 'Forge'
+            version: '1.12.2'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download existing release assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p work/${{ matrix.tag }}
+          cd work/${{ matrix.tag }}
+          gh release download ${{ matrix.tag }} --repo ${{ github.repository }}
+
+      - name: Create All-in-One Zip
+        run: |
+          cd work/${{ matrix.tag }}
+          python3 -c "
+          import os, zipfile
+          
+          loader = '${{ matrix.loader }}'
+          version = '${{ matrix.version }}'
+          aio_name = f'{loader}_{version}_Offline_GeminiWeb.zip'
+          subfolder = f'{loader}_{version}_GeminiWeb'
+          
+          files = [f for f in os.listdir('.') if f.endswith('.zip') or f == 'INSTRUCTIONS_MULTILINGUAL.txt']
+          print(f'Packing files into {aio_name}:', files)
+          
+          with zipfile.ZipFile(aio_name, 'w', compression=zipfile.ZIP_STORED) as zf:
+              for f in files:
+                  zf.write(f, arcname=f'{subfolder}/{f}')
+          
+          size_mb = os.path.getsize(aio_name) / 1024 / 1024
+          print(f'Done {aio_name}: {size_mb:.2f} MB')
+          "
+
+      - name: Upload All-in-One Zip to Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd work/${{ matrix.tag }}
+          gh release upload ${{ matrix.tag }} ${{ matrix.loader }}_${{ matrix.version }}_Offline_GeminiWeb.zip --clobber --repo ${{ github.repository }}
