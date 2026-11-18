@@ -1,0 +1,16 @@
+[
+{
+  "modid": "examplemod",
+  "name": "Example Mod",
+  "description": "Pre-cached Forge 1.12.1 template",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Developer"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
