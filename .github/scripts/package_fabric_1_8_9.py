@@ -148,45 +148,119 @@ with open(jdk_tar_path, 'rb') as f:
 os.remove(jdk_tar_path)
 
 # ----------------------------------------------------
-# 3. Generate Instructions & Verification Commands
+# 3. Generate Multilingual Instructions
 # ----------------------------------------------------
-inst_path = os.path.join(dist_dir, 'CHECKSUMS_AND_INSTRUCTIONS.txt')
-with open(inst_path, 'w', encoding='utf-8') as f:
-    f.write('======================================================================\n')
-    f.write('BỘ CACHE MINECRAFT FABRIC 1.8.9 OFFLINE CHUẨN LINUX X64 (UBUNTU)\n')
-    f.write('======================================================================\n\n')
-    f.write(f'JDK 8 Linux x64 SHA256: {jdk_sha256}\n')
-    f.write(f'Fabric 1.8.9 Cache SHA256: {cache_sha256}\n\n')
-    f.write('DANH SÁCH FILE UPLOAD LÊN GEMINI WEB:\n')
-    f.write('----------------------------------------------------------------------\n')
-    for p in jdk_parts_info:
-        f.write(f"- {p['zip_name']} ({p['zip_size_mb']:.2f} MB) -> chứa {p['part_name']}\n")
-    for p in cache_parts_info:
-        f.write(f"- {p['zip_name']} ({p['zip_size_mb']:.2f} MB) -> chứa {p['part_name']}\n")
-    f.write('\nLỆNH CHẠY TRÊN GEMINI WEB (DÁN VÀO PROMPT LÀ CHẠY):\n')
-    f.write('----------------------------------------------------------------------\n')
-    f.write('```bash\n')
-    f.write('# 1. Giải nén tất cả các file zip\n')
-    f.write('unzip -o "jdk8_part*.zip"\n')
-    f.write('unzip -o "fabric189_cache_part*.zip"\n\n')
-    f.write('# 2. Ghép nối lại các file gốc\n')
-    f.write('cat jdk-8_linux-x64.tar.gz.part* > jdk-8_linux-x64.tar.gz\n')
-    f.write('cat fabric189_offline_cache.tar.gz.part* > fabric189_offline_cache.tar.gz\n\n')
-    f.write('# 3. Kiểm tra tính toàn vẹn (SHA256)\n')
-    f.write(f'echo "{jdk_sha256}  jdk-8_linux-x64.tar.gz" | sha256sum -c\n')
-    f.write(f'echo "{cache_sha256}  fabric189_offline_cache.tar.gz" | sha256sum -c\n\n')
-    f.write('# 4. Cấu hình JDK 8\n')
-    f.write('mkdir -p $HOME/jdk-8\n')
-    f.write('tar -xzf jdk-8_linux-x64.tar.gz -C $HOME/jdk-8 --strip-components=1\n')
-    f.write('export JAVA_HOME=$HOME/jdk-8\n')
-    f.write('export PATH=$JAVA_HOME/bin:$PATH\n\n')
-    f.write('# 5. Giải nén Project và Gradle Cache vào $HOME\n')
-    f.write('tar -xzf fabric189_offline_cache.tar.gz -C $HOME/\n\n')
-    f.write('# 6. Chạy test build offline\n')
-    f.write('cd $HOME/fabric-1.8.9\n')
-    f.write('chmod +x gradlew\n')
-    f.write('./gradlew clean build --offline\n')
-    f.write('```\n\n')
-    f.write('======================================================================\n')
+all_parts = jdk_parts_info + cache_parts_info
+files_vn = "\n".join([f"- {p['zip_name']} ({p['zip_size_mb']:.2f} MB) -> chứa {p['part_name']}" for p in all_parts])
+files_en = "\n".join([f"- {p['zip_name']} ({p['zip_size_mb']:.2f} MB) -> contains {p['part_name']}" for p in all_parts])
+files_ja = "\n".join([f"- {p['zip_name']} ({p['zip_size_mb']:.2f} MB) -> {p['part_name']} を格納" for p in all_parts])
+files_zh = "\n".join([f"- {p['zip_name']} ({p['zip_size_mb']:.2f} MB) -> 包含 {p['part_name']}" for p in all_parts])
 
-print('All packaging completed successfully!')
+bash_cmd = f'''```bash
+# 1. Giải nén tất cả file zip / Unzip all zip parts
+unzip -o "jdk8_part*.zip"
+unzip -o "fabric189_cache_part*.zip"
+
+# 2. Ghép nối lại các file gốc / Merge parts into original archives
+cat jdk-8_linux-x64.tar.gz.part* > jdk-8_linux-x64.tar.gz
+cat fabric189_offline_cache.tar.gz.part* > fabric189_offline_cache.tar.gz
+
+# 3. Kiểm tra tính toàn vẹn SHA256 / Verify SHA256 integrity
+echo "{jdk_sha256}  jdk-8_linux-x64.tar.gz" | sha256sum -c
+echo "{cache_sha256}  fabric189_offline_cache.tar.gz" | sha256sum -c
+
+# 4. Cấu hình JDK 8 / Setup JDK 8
+mkdir -p $HOME/jdk-8
+tar -xzf jdk-8_linux-x64.tar.gz -C $HOME/jdk-8 --strip-components=1
+export JAVA_HOME=$HOME/jdk-8
+export PATH=$JAVA_HOME/bin:$PATH
+
+# 5. Giải nén Project và Gradle Cache vào $HOME / Extract to $HOME
+tar -xzf fabric189_offline_cache.tar.gz -C $HOME/
+
+# 6. Chạy test build offline / Run offline build test
+cd $HOME/fabric-1.8.9
+chmod +x gradlew
+./gradlew clean build --offline
+```'''
+
+multilingual_text = f'''======================================================================
+BỘ CACHE MINECRAFT FABRIC 1.8.9 OFFLINE CHUẨN LINUX X64
+MINECRAFT FABRIC 1.8.9 OFFLINE BUILD CACHE FOR LINUX X64
+MINECRAFT FABRIC 1.8.9 オフラインビルドキャッシュ (LINUX X64)
+MINECRAFT FABRIC 1.8.9 LINUX X64 离线构建缓存包
+======================================================================
+
+[1. TIẾNG VIỆT]
+----------------------------------------------------------------------
+Mô tả: Bộ cache build offline dành riêng cho Gemini Web (Linux x64).
+Toàn bộ thư viện, toolchain và Gradle cache đã được nạp sẵn 100%.
+
+DANH SÁCH FILE CẦN TẢI LÊN GEMINI WEB:
+{files_vn}
+
+CÂU LỆNH PROMPT DÁN VÀO GEMINI WEB:
+{bash_cmd}
+
+
+[2. ENGLISH]
+----------------------------------------------------------------------
+Description: 100% Offline build cache package for Gemini Web (Linux x64).
+All dependencies, toolchains, and Gradle caches are completely pre-cached.
+
+FILES TO标志 GEMINI WEB:
+{files_en}
+
+PROMPT TO COPY AND PASTE INTO GEMINI WEB:
+{bash_cmd}
+
+
+[3. 日本語 (JAPANESE)]
+----------------------------------------------------------------------
+説明: Gemini Web (Linux x64) 向け 100% オフラインビルド環境パッケージ。
+すべての依存ライブラリ、ツールチェーン、Gradleキャッシュが事前キャッシュ済みです。
+
+GEMINI WEB にアップロードするファイル一覧:
+{files_ja}
+
+GEMINI WEB のプロンプトに貼り付けるコマンド:
+{bash_cmd}
+
+
+[4. 简体中文 (CHINESE SIMPLIFIED)]
+----------------------------------------------------------------------
+说明: 专为 Gemini Web (Linux x64) 准备的 100% 离线构建缓存环境。
+所有的依赖库、工具链和 Gradle 缓存均已完全预先缓存完毕。
+
+上传到 GEMINI WEB 的文件清单:
+{files_zh}
+
+粘贴到 GEMINI WEB 提示词中的运行命令:
+{bash_cmd}
+======================================================================
+'''
+
+inst_path = os.path.join(dist_dir, 'INSTRUCTIONS_MULTILINGUAL.txt')
+with open(inst_path, 'w', encoding='utf-8') as f:
+    f.write(multilingual_text)
+
+with open(os.path.join(dist_dir, 'CHECKSUMS_AND_INSTRUCTIONS.txt'), 'w', encoding='utf-8') as f:
+    f.write(multilingual_text)
+
+# ----------------------------------------------------
+# 4. Create Single All-in-One Zip Package
+# ----------------------------------------------------
+aio_zip_name = 'Fabric_1.8.9_Offline_GeminiWeb.zip'
+aio_zip_path = os.path.join(dist_dir, aio_zip_name)
+print(f'Creating All-in-One zip: {aio_zip_path}...')
+
+with zipfile.ZipFile(aio_zip_path, 'w', compression=zipfile.ZIP_STORED) as aio_zf:
+    for p in all_parts:
+        part_file = os.path.join(dist_dir, p['zip_name'])
+        aio_zf.write(part_file, arcname=f'Fabric_1.8.9_GeminiWeb/{p["zip_name"]}')
+    aio_zf.write(inst_path, arcname='Fabric_1.8.9_GeminiWeb/INSTRUCTIONS_MULTILINGUAL.txt')
+
+aio_size_mb = os.path.getsize(aio_zip_path) / 1024 / 1024
+print(f'Done creating All-in-One zip: {aio_size_mb:.2f} MB')
+
+print('All packaging and All-in-One zip completed successfully!')
