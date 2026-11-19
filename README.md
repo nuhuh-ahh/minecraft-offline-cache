@@ -1,18 +1,65 @@
 # 🎮 Minecraft Universal Offline Build Cache & Environments (1.8.x - 26.x)
 
 <p align="center">
-  <b>100% Offline Modding Workspace &amp; Pre-cached Dependencies for Fabric &amp; Forge</b><br>
+  <b>100% Offline Modding Workspaces &amp; Pre-cached Dependencies for Fabric &amp; Forge</b><br>
   <i>Designed for Gemini Web, Sandboxed Cloud Containers, Air-gapped Machines, and Fast Local Modding.</i>
 </p>
 
 <p align="center">
-  <a href="#-tiếng-việt">🇻🇳 Tiếng Việt</a> •
   <a href="#-english">🇬🇧 English</a> •
+  <a href="#-tiếng-việt">🇻🇳 Tiếng Việt</a> •
   <a href="#-日本語">🇯🇵 日本語</a> •
   <a href="#-简体中文">🇨🇳 简体中文</a> •
-  <a href="#-desktop-app-downloader-net-10-wpf">🖥️ Downloader App</a> •
-  <a href="#-danh-sách-tất-cả-82-releases">📦 Releases</a>
+  <a href="#-desktop-app-downloader-windows-x64">🖥️ Downloader App</a> •
+  <a href="#-releases-catalog-82-versions">📦 Releases</a>
 </p>
+
+<p align="center">
+  <a href="https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.0.0-downloader/MinecraftCacheDownloader.exe">
+    <img src="https://img.shields.io/badge/Download-MinecraftCacheDownloader.exe_(Windows_x64)-2ea043?style=for-the-badge&logo=windows&logoColor=white" alt="Download Standalone Exe" />
+  </a>
+</p>
+
+---
+
+## 🇬🇧 ENGLISH
+
+Hey everyone! 👋
+
+If you have ever developed Minecraft mods, you know the struggle: every time you create a new project or run `./gradlew build`, Gradle takes forever downloading gigabytes of dependencies, MCP configs, mappings, and Mojang vanilla assets from remote servers. When you need to build or test mods inside **Gemini Web**, air-gapped workstations, or restricted sandbox environments with zero internet access, regular builds fail immediately.
+
+This repository completely solves that problem! We provide **100% offline, pre-cached modding workspaces** covering **82 major Minecraft versions from 1.8.x all the way up to 26.x**, strictly for **Forge** and **Fabric** (absolutely NO NeoForge). Everything has been compiled, cached, verified offline, and packaged directly on cloud runners.
+
+### ✨ Key Highlights:
+1. **Forge & Fabric Exclusively:** Full support for classic versions (1.8.9, 1.12.2) up to bleeding-edge releases (1.21.11, 26.3).
+2. **Dual Packaging Options:**
+   - **All-in-One ZIP (`*_Offline_GeminiWeb.zip`):** 1-click download containing the sample mod project, complete Gradle cache, and matching JDK.
+   - **Sliced Chunks $\le 94\text{ MB}$:** Sized specifically so you can drag-and-drop them straight into Gemini Web without hitting Google's 100 MB upload limit.
+3. **Bundled Linux x64 JDKs:** Adoptium Temurin OpenJDK (8, 16, 17, 21) and Oracle JDK 25 for Forge 26.x — no separate Java installation needed.
+4. **Integrity Guaranteed:** Every release includes `INSTRUCTIONS_MULTILINGUAL.txt` with SHA256 hashes and 1-click bash commands.
+
+### ⚡ 1-Click Quickstart (Linux / Gemini Web):
+```bash
+# 1. Unpack all zip archives
+unzip -o "*.zip"
+
+# 2. Reassemble chunked archives
+cat jdk*.tar.gz.part* > jdk_bundle.tar.gz
+cat *offline_cache.tar.gz.part* > offline_cache.tar.gz
+
+# 3. Setup JDK environment
+mkdir -p $HOME/jdk && tar -xzf jdk_bundle.tar.gz -C $HOME/jdk --strip-components=1
+export JAVA_HOME=$HOME/jdk
+export PATH=$JAVA_HOME/bin:$PATH
+
+# 4. Extract project and pre-cached Gradle dependencies
+tar -xzf offline_cache.tar.gz -C $HOME/
+
+# 5. Build completely offline!
+cd $HOME/*-*/
+chmod +x gradlew
+./gradlew clean build --offline
+```
 
 ---
 
@@ -20,11 +67,11 @@
 
 Chào mọi người! 👋
 
-Nếu bạn từng mod Minecraft, chắc chắn bạn không lạ gì cảnh mỗi lần tạo project mới hay chạy `./gradlew build` là Gradle lại tốn cả chục phút (thậm chí hàng giờ) kéo hàng nghìn file dependencies, thư viện MCP, mappings, assets... từ server Mojang và Forge về. Đặc biệt là khi bạn chạy code trong **Gemini Web**, môi trường container sandbox bị chặn mạng, máy tính không có internet, hay mạng chập chờn chặn các kho Maven nước ngoài, thì việc build mod gần như là bất khả thi.
+Nếu bạn từng làm mod Minecraft, chắc chắn bạn không lạ gì cảnh mỗi lần khởi tạo project mới hay chạy `./gradlew build` là Gradle lại tốn cả chục phút kéo hàng nghìn file dependencies, thư viện MCP, mappings, assets... từ server Mojang và Forge về máy. Đặc biệt là khi bạn chạy code trong **Gemini Web**, môi trường container sandbox bị chặn mạng, máy tính offline không có internet, hay mạng quốc tế chập chờn chặn các kho Maven nước ngoài, thì việc build mod gần như là bất khả thi.
 
 Dự án này sinh ra để giải quyết triệt để vấn đề đó! Toàn bộ 82 phiên bản Minecraft phổ biến nhất từ **1.8.x cho đến tận 26.x** đều đã được mình build thử nghiệm, trích xuất sạch sẽ toàn bộ cache và đóng gói sẵn sàng để bạn **chạy build offline 100% chỉ trong vài giây**.
 
-### 💡 Điểm đặc biệt của bộ cache này:
+### 💡 Điểm đặc biệt của bộ cache:
 1. **Chỉ tập trung vào Fabric & Forge (Tuyệt đối không dùng NeoForge):** Tương thích chuẩn xác với các modder truyền thống và hiện đại.
 2. **Hai cách tải linh hoạt:**
    - **File ZIP All-in-One (`*_Offline_GeminiWeb.zip`):** Tải 1 lần duy nhất chứa đầy đủ project + cache + bộ cài JDK tương ứng.
@@ -34,7 +81,7 @@ Dự án này sinh ra để giải quyết triệt để vấn đề đó! Toàn
 
 ### 🚀 Lệnh 1-Click chạy ngay trong Linux / Gemini Web:
 ```bash
-# 1. Giải nén tất cả file zip
+# 1. Giải nén tất cả file zip đã tải về
 unzip -o "*.zip"
 
 # 2. Ghép nối các part lại thành file nén gốc
@@ -50,47 +97,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 tar -xzf offline_cache.tar.gz -C $HOME/
 
 # 5. Build offline ngay lập tức!
-cd $HOME/*-1.*/ # hoặc cd vào thư mục project
-chmod +x gradlew
-./gradlew clean build --offline
-```
-
----
-
-## 🇬🇧 ENGLISH
-
-Hey everyone! 👋
-
-If you've ever developed Minecraft mods, you know how frustrating it is when Gradle spends endless minutes downloading gigabytes of libraries, MCP configs, mappings, and Mojang assets every single time. And if you are trying to compile or test mods inside **Gemini Web**, air-gapped workstations, or restricted sandbox environments with zero internet access, regular builds simply fail immediately.
-
-This repository provides **100% offline, pre-cached modding environments** covering **82 major Minecraft versions from 1.8.x all the way up to 26.x**, strictly for **Forge** and **Fabric** (absolutely NO NeoForge). Everything has been compiled and verified offline on cloud runners.
-
-### ✨ What's Inside:
-1. **Forge & Fabric Exclusively:** Full support for classic modding (1.8.9, 1.12.2) up to bleeding-edge releases (1.21.11, 26.3).
-2. **Dual Packaging Options:**
-   - **Single All-in-One ZIP (`*_Offline_GeminiWeb.zip`):** 1-click download bundling the sample project, full Gradle cache, and matching JDK.
-   - **Sliced Chunks $\le 94\text{ MB}$:** Specifically sized so you can drag-and-drop them straight into Gemini Web without hitting Google's 100 MB upload cap.
-3. **Bundled Linux x64 JDKs:** Temurin OpenJDK 8, 16, 17, 21, and Oracle JDK 25 for Forge 26.x.
-4. **Integrity Guaranteed:** SHA256 hashes and 4-language guides (`INSTRUCTIONS_MULTILINGUAL.txt`) in every single release.
-
-### ⚡ Quickstart Bash Commands:
-```bash
-# 1. Unpack all zip archives
-unzip -o "*.zip"
-
-# 2. Reassemble chunked archives
-cat jdk*.tar.gz.part* > jdk_bundle.tar.gz
-cat *offline_cache.tar.gz.part* > offline_cache.tar.gz
-
-# 3. Setup JDK
-mkdir -p $HOME/jdk && tar -xzf jdk_bundle.tar.gz -C $HOME/jdk --strip-components=1
-export JAVA_HOME=$HOME/jdk
-export PATH=$JAVA_HOME/bin:$PATH
-
-# 4. Extract project and Gradle cache
-tar -xzf offline_cache.tar.gz -C $HOME/
-
-# 5. Build completely offline!
 cd $HOME/*-*/
 chmod +x gradlew
 ./gradlew clean build --offline
@@ -114,11 +120,34 @@ MOD開発を始める際、Gradleが大量の依存ライブラリやMCPマッ�
 3. **Linux x64 JDK同梱:** Temurin 8, 16, 17, 21 および Forge 26.x 向けの Oracle JDK 25 をセットアップ済み。
 4. **安心の整合性検証:** すべてのリリースに4言語解説書と SHA256 チェックサムを添付。
 
+### ⚡ 1クリック簡単セットアップ（Linux / Gemini Web）：
+```bash
+# 1. すべての zip アーカイブを展開
+unzip -o "*.zip"
+
+# 2. 分割ファイルを結合
+cat jdk*.tar.gz.part* > jdk_bundle.tar.gz
+cat *offline_cache.tar.gz.part* > offline_cache.tar.gz
+
+# 3. JDK のセットアップ
+mkdir -p $HOME/jdk && tar -xzf jdk_bundle.tar.gz -C $HOME/jdk --strip-components=1
+export JAVA_HOME=$HOME/jdk
+export PATH=$JAVA_HOME/bin:$PATH
+
+# 4. プロジェクトとキャッシュを展開
+tar -xzf offline_cache.tar.gz -C $HOME/
+
+# 5. 完全オフラインでビルド開始！
+cd $HOME/*-*/
+chmod +x gradlew
+./gradlew clean build --offline
+```
+
 ---
 
 ## 🇨🇳 简体中文
 
-各位 Minecraft 开发者与玩家，大家好！👋
+各位 Minecraft 模组开发者与玩家，大家好！👋
 
 在进行模组开发时，每次初始化项目或执行 `./gradlew build`，Gradle 往往需要从外网下载数以千计的依赖项、MCP 映射表与游戏资源，耗时漫长且极易因网络超时而失败。尤其是在 **Gemini Web**、离线沙箱、内网机房或网络受限的环境中，完全无法直接拉取 Maven 仓库。
 
@@ -132,31 +161,50 @@ MOD開発を始める際、Gradleが大量の依存ライブラリやMCPマッ�
 3. **预装 Linux x64 JDK 环境:** 附带 Temurin OpenJDK 8 / 16 / 17 / 21 及针对 26.x 的 Oracle JDK 25，解压即配好环境。
 4. **SHA256 校验与多语言文档:** 每个 Release 均内置 4 语种详细指南 `INSTRUCTIONS_MULTILINGUAL.txt`。
 
+### ⚡ 终端极速上手指令（Linux / Gemini Web）：
+```bash
+# 1. 解压所有已上传的 zip 压缩包
+unzip -o "*.zip"
+
+# 2. 合并分卷压缩文件
+cat jdk*.tar.gz.part* > jdk_bundle.tar.gz
+cat *offline_cache.tar.gz.part* > offline_cache.tar.gz
+
+# 3. 部署并配置 Java JDK 环境
+mkdir -p $HOME/jdk && tar -xzf jdk_bundle.tar.gz -C $HOME/jdk --strip-components=1
+export JAVA_HOME=$HOME/jdk
+export PATH=$JAVA_HOME/bin:$PATH
+
+# 4. 解压预缓存工程与 Gradle 依赖库到 HOME 目录
+tar -xzf offline_cache.tar.gz -C $HOME/
+
+# 5. 即刻享受 100% 纯离线极速编译！
+cd $HOME/*-*/
+chmod +x gradlew
+./gradlew clean build --offline
+```
+
 ---
 
-## 🖥️ DESKTOP APP DOWNLOADER (.NET 10 WPF STANDALONE)
+## 🖥️ DESKTOP APP DOWNLOADER (WINDOWS x64)
+
+For Windows users who want an effortless way to browse and download these offline packages, we created an open-source desktop GUI tool built with **WPF + C# on .NET 10** (`MinecraftCacheDownloader.exe`), compiled as a **single standalone file (Self-Contained)** that runs immediately on any Windows 64-bit PC without installing .NET:
+
+- 🌐 **Dynamic Online Catalog Sync:** The app connects directly to [`catalog.json`](catalog.json) in this repository. Whenever new versions or loaders are added in the future, the app automatically detects and displays them without requiring you to rebuild or download a new `.exe`!
+- 🚀 **1 Single Standalone `.exe`:** No .NET runtime installation required — everything is bundled inside a single portable binary (~61 MB).
+- 🔍 **Smart ZIP Integrity Validation:** Automatically scans the `data/` folder before downloading to test existing ZIP archives (`ZipFile.OpenRead`). It skips valid files to prevent duplicate downloads and flags broken or incomplete downloads.
+- 📊 **Real-time Live Metrics:** Displays a smooth progress bar, current file size (`MB / GB`), real-time download speed (`KB/s`, `MB/s`, `GB/s`), elapsed time, and dynamic ETA.
+- 📥 **Batch Queue Downloads:** Select individual versions or click "Select All" to download in batch queue with a single click.
+- 📂 **Auto-Organized Storage:** Automatically saves and organizes all downloaded archives into a `data/` folder right next to the `.exe`.
 
 <p align="center">
-  <a href="https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.0.0-downloader/MinecraftCacheDownloader.exe">
-    <img src="https://img.shields.io/badge/Tải_Xuống-MinecraftCacheDownloader.exe_(Windows_x64)-2ea043?style=for-the-badge&logo=windows&logoColor=white" alt="Download Standalone Exe" />
-  </a>
+  <a href="https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.0.0-downloader"><b>📦 View Official App Release</b></a> •
+  <a href="https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.0.0-downloader/MinecraftCacheDownloader.exe"><b>⚡ Direct Download (MinecraftCacheDownloader.exe)</b></a>
 </p>
-
-Chúng mình đã đóng gói sẵn ứng dụng desktop giao diện đồ họa hiện đại bằng **WPF + C# trên nền tảng .NET 10** thành **đúng 1 file `.exe` duy nhất (Self-Contained)**. Bạn có thể gửi file này cho bất kỳ ai chạy trên bất kỳ máy tính Windows 64-bit nào là mở lên dùng được ngay, **hoàn toàn không cần cài đặt thêm .NET Runtime**:
-
-- 🌐 **Tự động Fetch & Đồng bộ phiên bản mới từ GitHub:** Ứng dụng tự động kết nối đến file [`catalog.json`](catalog.json) trên repo để cập nhật danh sách phiên bản và link tải mới nhất. **Về sau khi repo có thêm phiên bản Minecraft hay Loader mới, app sẽ tự động nhận diện và hiển thị ngay mà bạn không cần phải build lại hay tải lại file `.exe`!**
-- 🚀 **1 File `.exe` duy nhất (Zero Setup):** Đã tích hợp sẵn toàn bộ runtime và danh mục dự phòng offline bên trong file.
-- 🔍 **Tự động quét & kiểm tra file ZIP hợp lệ:** Kiểm tra dung lượng và cấu trúc file trong thư mục `data/` trước khi tải để **tránh tải lặp hoặc phát hiện file tải dở/hỏng**.
-- 📊 **Hiển thị thông số thời gian thực:** Thanh tiến trình trực quan, dung lượng (`MB / GB`), tốc độ tải live (`MB/s`, `GB/s`), thời gian đã chạy và thời gian còn lại (ETA).
-- 📥 **Tải hàng loạt (Batch Queue):** Chọn nhiều bản cùng lúc hoặc nhấn "Chọn tất cả" rồi bấm tải tự động.
-- 📂 **Lưu trữ chuẩn xác:** Toàn bộ file tải về được lưu gọn gàng vào thư mục `data/` ngay cạnh file `.exe`.
-
-👉 **Link Release chính thức:** [**Minecraft Cache Downloader App v1.0.0**](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.0.0-downloader)  
-👉 **Tải trực tiếp 1-Click:** [**`MinecraftCacheDownloader.exe` (Direct Download)**](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.0.0-downloader/MinecraftCacheDownloader.exe)
 
 ---
 
-## 📦 DANH SÁCH TẤT CẢ 82 RELEASES / RELEASE CATALOG
+## 📦 RELEASES CATALOG (82 VERSIONS)
 
 ### 🧵 Fabric Releases (44 Versions)
 
@@ -253,5 +301,5 @@ Chúng mình đã đóng gói sẵn ứng dụng desktop giao diện đồ họa
 ---
 
 <p align="center">
-  <i>Crafted with ❤️ for Minecraft Modders around the world. Happy offline building!</i>
+  <i>Crafted with ❤️ for the global Minecraft modding community. Happy offline coding!</i>
 </p>
