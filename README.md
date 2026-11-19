@@ -300,6 +300,18 @@ For Windows users who want an effortless way to browse and download these offlin
 
 ---
 
+## ⚖️ Copyright & License
+
+- **Project Creator & Lead Developer:** **AkumiYuukii** (Discord: `hellnah._.whyy`)
+- **License:** [LICENSE](LICENSE) • [COPYRIGHT NOTICE](COPYRIGHT.md)
+- Copyright © 2026 **AkumiYuukii**. All rights reserved.
+
+All companion downloader applications, automation pipelines, packaging scripts, and repository layouts are authored and maintained by **AkumiYuukii** (Discord: `hellnah._.whyy`).
+
+*Disclaimer: Minecraft is a registered trademark of Mojang Synergies AB / Microsoft Corporation. This project is an independent community development tool.*
+
+---
+
 <p align="center">
-  <i>Crafted with ❤️ for the global Minecraft modding community. Happy offline coding!</i>
+  <i>Crafted with ❤️ by AkumiYuukii for the global Minecraft modding community. Happy offline coding!</i>
 </p>
