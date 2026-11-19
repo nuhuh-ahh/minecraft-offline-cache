@@ -1,0 +1,658 @@
+[
+  {
+    "tag": "v1.8.9-fabric",
+    "loader": "Fabric",
+    "version": "1.8.9",
+    "fileName": "Fabric_1.8.9_Offline_GeminiWeb.zip",
+    "size": 361212721,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.8.9-fabric/Fabric_1.8.9_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.9.4-fabric",
+    "loader": "Fabric",
+    "version": "1.9.4",
+    "fileName": "Fabric_1.9.4_Offline_GeminiWeb.zip",
+    "size": 365348884,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.9.4-fabric/Fabric_1.9.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.10.2-fabric",
+    "loader": "Fabric",
+    "version": "1.10.2",
+    "fileName": "Fabric_1.10.2_Offline_GeminiWeb.zip",
+    "size": 366402682,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.10.2-fabric/Fabric_1.10.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.11.2-fabric",
+    "loader": "Fabric",
+    "version": "1.11.2",
+    "fileName": "Fabric_1.11.2_Offline_GeminiWeb.zip",
+    "size": 371075095,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.11.2-fabric/Fabric_1.11.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.12.2-fabric",
+    "loader": "Fabric",
+    "version": "1.12.2",
+    "fileName": "Fabric_1.12.2_Offline_GeminiWeb.zip",
+    "size": 418119161,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.12.2-fabric/Fabric_1.12.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.13.2-fabric",
+    "loader": "Fabric",
+    "version": "1.13.2",
+    "fileName": "Fabric_1.13.2_Offline_GeminiWeb.zip",
+    "size": 438000900,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.13.2-fabric/Fabric_1.13.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.14.3-fabric",
+    "loader": "Fabric",
+    "version": "1.14.3",
+    "fileName": "Fabric_1.14.3_Offline_GeminiWeb.zip",
+    "size": 470824447,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.14.3-fabric/Fabric_1.14.3_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.14.4-fabric",
+    "loader": "Fabric",
+    "version": "1.14.4",
+    "fileName": "Fabric_1.14.4_Offline_GeminiWeb.zip",
+    "size": 553276619,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.14.4-fabric/Fabric_1.14.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.15.1-fabric",
+    "loader": "Fabric",
+    "version": "1.15.1",
+    "fileName": "Fabric_1.15.1_Offline_GeminiWeb.zip",
+    "size": 445529914,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.15.1-fabric/Fabric_1.15.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.15.2-fabric",
+    "loader": "Fabric",
+    "version": "1.15.2",
+    "fileName": "Fabric_1.15.2_Offline_GeminiWeb.zip",
+    "size": 476742201,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.15.2-fabric/Fabric_1.15.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.16.1-fabric",
+    "loader": "Fabric",
+    "version": "1.16.1",
+    "fileName": "Fabric_1.16.1_Offline_GeminiWeb.zip",
+    "size": 505013615,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.16.1-fabric/Fabric_1.16.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.16.2-fabric",
+    "loader": "Fabric",
+    "version": "1.16.2",
+    "fileName": "Fabric_1.16.2_Offline_GeminiWeb.zip",
+    "size": 469607833,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.16.2-fabric/Fabric_1.16.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.16.3-fabric",
+    "loader": "Fabric",
+    "version": "1.16.3",
+    "fileName": "Fabric_1.16.3_Offline_GeminiWeb.zip",
+    "size": 469639365,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.16.3-fabric/Fabric_1.16.3_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.16.4-fabric",
+    "loader": "Fabric",
+    "version": "1.16.4",
+    "fileName": "Fabric_1.16.4_Offline_GeminiWeb.zip",
+    "size": 469945877,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.16.4-fabric/Fabric_1.16.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.16.5-fabric",
+    "loader": "Fabric",
+    "version": "1.16.5",
+    "fileName": "Fabric_1.16.5_Offline_GeminiWeb.zip",
+    "size": 505949826,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.16.5-fabric/Fabric_1.16.5_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.17-fabric",
+    "loader": "Fabric",
+    "version": "1.17",
+    "fileName": "Fabric_1.17_Offline_GeminiWeb.zip",
+    "size": 640830077,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.17-fabric/Fabric_1.17_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.17.1-fabric",
+    "loader": "Fabric",
+    "version": "1.17.1",
+    "fileName": "Fabric_1.17.1_Offline_GeminiWeb.zip",
+    "size": 639819984,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.17.1-fabric/Fabric_1.17.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.18-fabric",
+    "loader": "Fabric",
+    "version": "1.18",
+    "fileName": "Fabric_1.18_Offline_GeminiWeb.zip",
+    "size": 644582940,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.18-fabric/Fabric_1.18_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.18.1-fabric",
+    "loader": "Fabric",
+    "version": "1.18.1",
+    "fileName": "Fabric_1.18.1_Offline_GeminiWeb.zip",
+    "size": 603170794,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.18.1-fabric/Fabric_1.18.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.18.2-fabric",
+    "loader": "Fabric",
+    "version": "1.18.2",
+    "fileName": "Fabric_1.18.2_Offline_GeminiWeb.zip",
+    "size": 646056025,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.18.2-fabric/Fabric_1.18.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.19-fabric",
+    "loader": "Fabric",
+    "version": "1.19",
+    "fileName": "Fabric_1.19_Offline_GeminiWeb.zip",
+    "size": 662417616,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.19-fabric/Fabric_1.19_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.19.1-fabric",
+    "loader": "Fabric",
+    "version": "1.19.1",
+    "fileName": "Fabric_1.19.1_Offline_GeminiWeb.zip",
+    "size": 657881738,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.19.1-fabric/Fabric_1.19.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.19.2-fabric",
+    "loader": "Fabric",
+    "version": "1.19.2",
+    "fileName": "Fabric_1.19.2_Offline_GeminiWeb.zip",
+    "size": 661275793,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.19.2-fabric/Fabric_1.19.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.19.3-fabric",
+    "loader": "Fabric",
+    "version": "1.19.3",
+    "fileName": "Fabric_1.19.3_Offline_GeminiWeb.zip",
+    "size": 674449791,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.19.3-fabric/Fabric_1.19.3_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.19.4-fabric",
+    "loader": "Fabric",
+    "version": "1.19.4",
+    "fileName": "Fabric_1.19.4_Offline_GeminiWeb.zip",
+    "size": 680937981,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.19.4-fabric/Fabric_1.19.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20-fabric",
+    "loader": "Fabric",
+    "version": "1.20",
+    "fileName": "Fabric_1.20_Offline_GeminiWeb.zip",
+    "size": 678698869,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20-fabric/Fabric_1.20_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.1-fabric",
+    "loader": "Fabric",
+    "version": "1.20.1",
+    "fileName": "Fabric_1.20.1_Offline_GeminiWeb.zip",
+    "size": 674864354,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.1-fabric/Fabric_1.20.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.2-fabric",
+    "loader": "Fabric",
+    "version": "1.20.2",
+    "fileName": "Fabric_1.20.2_Offline_GeminiWeb.zip",
+    "size": 678208356,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.2-fabric/Fabric_1.20.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.3-fabric",
+    "loader": "Fabric",
+    "version": "1.20.3",
+    "fileName": "Fabric_1.20.3_Offline_GeminiWeb.zip",
+    "size": 688181796,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.3-fabric/Fabric_1.20.3_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.4-fabric",
+    "loader": "Fabric",
+    "version": "1.20.4",
+    "fileName": "Fabric_1.20.4_Offline_GeminiWeb.zip",
+    "size": 684832058,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.4-fabric/Fabric_1.20.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.5-fabric",
+    "loader": "Fabric",
+    "version": "1.20.5",
+    "fileName": "Fabric_1.20.5_Offline_GeminiWeb.zip",
+    "size": 720471138,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.5-fabric/Fabric_1.20.5_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.6-fabric",
+    "loader": "Fabric",
+    "version": "1.20.6",
+    "fileName": "Fabric_1.20.6_Offline_GeminiWeb.zip",
+    "size": 720747304,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.6-fabric/Fabric_1.20.6_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21-fabric",
+    "loader": "Fabric",
+    "version": "1.21",
+    "fileName": "Fabric_1.21_Offline_GeminiWeb.zip",
+    "size": 725083343,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21-fabric/Fabric_1.21_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.1-fabric",
+    "loader": "Fabric",
+    "version": "1.21.1",
+    "fileName": "Fabric_1.21.1_Offline_GeminiWeb.zip",
+    "size": 720607074,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.1-fabric/Fabric_1.21.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.2-fabric",
+    "loader": "Fabric",
+    "version": "1.21.2",
+    "fileName": "Fabric_1.21.2_Offline_GeminiWeb.zip",
+    "size": 740819163,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.2-fabric/Fabric_1.21.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.3-fabric",
+    "loader": "Fabric",
+    "version": "1.21.3",
+    "fileName": "Fabric_1.21.3_Offline_GeminiWeb.zip",
+    "size": 741288167,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.3-fabric/Fabric_1.21.3_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.4-fabric",
+    "loader": "Fabric",
+    "version": "1.21.4",
+    "fileName": "Fabric_1.21.4_Offline_GeminiWeb.zip",
+    "size": 745434659,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.4-fabric/Fabric_1.21.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.5-fabric",
+    "loader": "Fabric",
+    "version": "1.21.5",
+    "fileName": "Fabric_1.21.5_Offline_GeminiWeb.zip",
+    "size": 686216411,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.5-fabric/Fabric_1.21.5_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.6-fabric",
+    "loader": "Fabric",
+    "version": "1.21.6",
+    "fileName": "Fabric_1.21.6_Offline_GeminiWeb.zip",
+    "size": 689748427,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.6-fabric/Fabric_1.21.6_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.7-fabric",
+    "loader": "Fabric",
+    "version": "1.21.7",
+    "fileName": "Fabric_1.21.7_Offline_GeminiWeb.zip",
+    "size": 689809294,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.7-fabric/Fabric_1.21.7_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.8-fabric",
+    "loader": "Fabric",
+    "version": "1.21.8",
+    "fileName": "Fabric_1.21.8_Offline_GeminiWeb.zip",
+    "size": 689806863,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.8-fabric/Fabric_1.21.8_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.9-fabric",
+    "loader": "Fabric",
+    "version": "1.21.9",
+    "fileName": "Fabric_1.21.9_Offline_GeminiWeb.zip",
+    "size": 697670500,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.9-fabric/Fabric_1.21.9_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.10-fabric",
+    "loader": "Fabric",
+    "version": "1.21.10",
+    "fileName": "Fabric_1.21.10_Offline_GeminiWeb.zip",
+    "size": 766952757,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.10-fabric/Fabric_1.21.10_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.11-fabric",
+    "loader": "Fabric",
+    "version": "1.21.11",
+    "fileName": "Fabric_1.21.11_Offline_GeminiWeb.zip",
+    "size": 657492538,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.11-fabric/Fabric_1.21.11_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.8.9-forge",
+    "loader": "Forge",
+    "version": "1.8.9",
+    "fileName": "Forge_1.8.9_Offline_GeminiWeb.zip",
+    "size": 459493763,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.8.9-forge/Forge_1.8.9_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.12.2-forge",
+    "loader": "Forge",
+    "version": "1.12.2",
+    "fileName": "Forge_1.12.2_Offline_GeminiWeb.zip",
+    "size": 545282437,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.12.2-forge/Forge_1.12.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.14.4-forge",
+    "loader": "Forge",
+    "version": "1.14.4",
+    "fileName": "Forge_1.14.4_Offline_GeminiWeb.zip",
+    "size": 640172505,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.14.4-forge/Forge_1.14.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.15.1-forge",
+    "loader": "Forge",
+    "version": "1.15.1",
+    "fileName": "Forge_1.15.1_Offline_GeminiWeb.zip",
+    "size": 616308803,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.15.1-forge/Forge_1.15.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.15.2-forge",
+    "loader": "Forge",
+    "version": "1.15.2",
+    "fileName": "Forge_1.15.2_Offline_GeminiWeb.zip",
+    "size": 615165447,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.15.2-forge/Forge_1.15.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.16.1-forge",
+    "loader": "Forge",
+    "version": "1.16.1",
+    "fileName": "Forge_1.16.1_Offline_GeminiWeb.zip",
+    "size": 641261249,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.16.1-forge/Forge_1.16.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.16.2-forge",
+    "loader": "Forge",
+    "version": "1.16.2",
+    "fileName": "Forge_1.16.2_Offline_GeminiWeb.zip",
+    "size": 641363129,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.16.2-forge/Forge_1.16.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.16.3-forge",
+    "loader": "Forge",
+    "version": "1.16.3",
+    "fileName": "Forge_1.16.3_Offline_GeminiWeb.zip",
+    "size": 641791329,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.16.3-forge/Forge_1.16.3_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.16.4-forge",
+    "loader": "Forge",
+    "version": "1.16.4",
+    "fileName": "Forge_1.16.4_Offline_GeminiWeb.zip",
+    "size": 644709969,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.16.4-forge/Forge_1.16.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.16.5-forge",
+    "loader": "Forge",
+    "version": "1.16.5",
+    "fileName": "Forge_1.16.5_Offline_GeminiWeb.zip",
+    "size": 647458841,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.16.5-forge/Forge_1.16.5_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.17.1-forge",
+    "loader": "Forge",
+    "version": "1.17.1",
+    "fileName": "Forge_1.17.1_Offline_GeminiWeb.zip",
+    "size": 824632468,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.17.1-forge/Forge_1.17.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.18.1-forge",
+    "loader": "Forge",
+    "version": "1.18.1",
+    "fileName": "Forge_1.18.1_Offline_GeminiWeb.zip",
+    "size": 856038386,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.18.1-forge/Forge_1.18.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.18.2-forge",
+    "loader": "Forge",
+    "version": "1.18.2",
+    "fileName": "Forge_1.18.2_Offline_GeminiWeb.zip",
+    "size": 855916157,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.18.2-forge/Forge_1.18.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.19.1-forge",
+    "loader": "Forge",
+    "version": "1.19.1",
+    "fileName": "Forge_1.19.1_Offline_GeminiWeb.zip",
+    "size": 873104305,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.19.1-forge/Forge_1.19.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.19.2-forge",
+    "loader": "Forge",
+    "version": "1.19.2",
+    "fileName": "Forge_1.19.2_Offline_GeminiWeb.zip",
+    "size": 872416887,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.19.2-forge/Forge_1.19.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.19.3-forge",
+    "loader": "Forge",
+    "version": "1.19.3",
+    "fileName": "Forge_1.19.3_Offline_GeminiWeb.zip",
+    "size": 886463377,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.19.3-forge/Forge_1.19.3_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.19.4-forge",
+    "loader": "Forge",
+    "version": "1.19.4",
+    "fileName": "Forge_1.19.4_Offline_GeminiWeb.zip",
+    "size": 893129576,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.19.4-forge/Forge_1.19.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.1-forge",
+    "loader": "Forge",
+    "version": "1.20.1",
+    "fileName": "Forge_1.20.1_Offline_GeminiWeb.zip",
+    "size": 909996636,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.1-forge/Forge_1.20.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.2-forge",
+    "loader": "Forge",
+    "version": "1.20.2",
+    "fileName": "Forge_1.20.2_Offline_GeminiWeb.zip",
+    "size": 919329331,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.2-forge/Forge_1.20.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.3-forge",
+    "loader": "Forge",
+    "version": "1.20.3",
+    "fileName": "Forge_1.20.3_Offline_GeminiWeb.zip",
+    "size": 925768768,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.3-forge/Forge_1.20.3_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.4-forge",
+    "loader": "Forge",
+    "version": "1.20.4",
+    "fileName": "Forge_1.20.4_Offline_GeminiWeb.zip",
+    "size": 927068254,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.4-forge/Forge_1.20.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.6-forge",
+    "loader": "Forge",
+    "version": "1.20.6",
+    "fileName": "Forge_1.20.6_Offline_GeminiWeb.zip",
+    "size": 968408364,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.6-forge/Forge_1.20.6_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21-forge",
+    "loader": "Forge",
+    "version": "1.21",
+    "fileName": "Forge_1.21_Offline_GeminiWeb.zip",
+    "size": 970783384,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21-forge/Forge_1.21_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.1-forge",
+    "loader": "Forge",
+    "version": "1.21.1",
+    "fileName": "Forge_1.21.1_Offline_GeminiWeb.zip",
+    "size": 972991278,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.1-forge/Forge_1.21.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.3-forge",
+    "loader": "Forge",
+    "version": "1.21.3",
+    "fileName": "Forge_1.21.3_Offline_GeminiWeb.zip",
+    "size": 995385340,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.3-forge/Forge_1.21.3_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.4-forge",
+    "loader": "Forge",
+    "version": "1.21.4",
+    "fileName": "Forge_1.21.4_Offline_GeminiWeb.zip",
+    "size": 1001963150,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.4-forge/Forge_1.21.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.5-forge",
+    "loader": "Forge",
+    "version": "1.21.5",
+    "fileName": "Forge_1.21.5_Offline_GeminiWeb.zip",
+    "size": 1009006948,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.5-forge/Forge_1.21.5_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.6-forge",
+    "loader": "Forge",
+    "version": "1.21.6",
+    "fileName": "Forge_1.21.6_Offline_GeminiWeb.zip",
+    "size": 1014856452,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.6-forge/Forge_1.21.6_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.7-forge",
+    "loader": "Forge",
+    "version": "1.21.7",
+    "fileName": "Forge_1.21.7_Offline_GeminiWeb.zip",
+    "size": 1014938183,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.7-forge/Forge_1.21.7_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.8-forge",
+    "loader": "Forge",
+    "version": "1.21.8",
+    "fileName": "Forge_1.21.8_Offline_GeminiWeb.zip",
+    "size": 1017627923,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.8-forge/Forge_1.21.8_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.9-forge",
+    "loader": "Forge",
+    "version": "1.21.9",
+    "fileName": "Forge_1.21.9_Offline_GeminiWeb.zip",
+    "size": 1029349457,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.9-forge/Forge_1.21.9_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.10-forge",
+    "loader": "Forge",
+    "version": "1.21.10",
+    "fileName": "Forge_1.21.10_Offline_GeminiWeb.zip",
+    "size": 1030909560,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.10-forge/Forge_1.21.10_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.11-forge",
+    "loader": "Forge",
+    "version": "1.21.11",
+    "fileName": "Forge_1.21.11_Offline_GeminiWeb.zip",
+    "size": 1244537507,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.11-forge/Forge_1.21.11_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v26.1-forge",
+    "loader": "Forge",
+    "version": "26.1",
+    "fileName": "Forge_26.1_Offline_GeminiWeb.zip",
+    "size": 1233403916,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v26.1-forge/Forge_26.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v26.1.1-forge",
+    "loader": "Forge",
+    "version": "26.1.1",
+    "fileName": "Forge_26.1.1_Offline_GeminiWeb.zip",
+    "size": 1233398622,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v26.1.1-forge/Forge_26.1.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v26.1.2-forge",
+    "loader": "Forge",
+    "version": "26.1.2",
+    "fileName": "Forge_26.1.2_Offline_GeminiWeb.zip",
+    "size": 1233500060,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v26.1.2-forge/Forge_26.1.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v26.2-forge",
+    "loader": "Forge",
+    "version": "26.2",
+    "fileName": "Forge_26.2_Offline_GeminiWeb.zip",
+    "size": 1284655947,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v26.2-forge/Forge_26.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v26.3-forge",
+    "loader": "Forge",
+    "version": "26.3",
+    "fileName": "Forge_26.3_Offline_GeminiWeb.zip",
+    "size": 1301098777,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v26.3-forge/Forge_26.3_Offline_GeminiWeb.zip"
+  }
+]
