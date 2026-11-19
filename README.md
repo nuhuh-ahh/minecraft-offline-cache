@@ -138,19 +138,21 @@ MOD開発を始める際、Gradleが大量の依存ライブラリやMCPマッ�
 
 <p align="center">
   <a href="https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.0.0-downloader/MinecraftCacheDownloader.exe">
-    <img src="https://img.shields.io/badge/Download-MinecraftCacheDownloader.exe_(Windows_x64)-2ea043?style=for-the-badge&logo=windows&logoColor=white" alt="Download Standalone Exe" />
+    <img src="https://img.shields.io/badge/Tải_Xuống-MinecraftCacheDownloader.exe_(Windows_x64)-2ea043?style=for-the-badge&logo=windows&logoColor=white" alt="Download Standalone Exe" />
   </a>
 </p>
 
-Chúng mình đã đóng gói sẵn một ứng dụng desktop giao diện đồ họa hiện đại bằng **WPF + C# trên nền tảng .NET 10** thành **đúng 1 file `.exe` duy nhất (Self-Contained)**. Bạn có thể gửi file này cho bất kỳ ai chạy trên bất kỳ máy tính Windows 64-bit nào là mở lên dùng được ngay, **hoàn toàn không cần cài đặt thêm .NET Runtime**:
+Chúng mình đã đóng gói sẵn ứng dụng desktop giao diện đồ họa hiện đại bằng **WPF + C# trên nền tảng .NET 10** thành **đúng 1 file `.exe` duy nhất (Self-Contained)**. Bạn có thể gửi file này cho bất kỳ ai chạy trên bất kỳ máy tính Windows 64-bit nào là mở lên dùng được ngay, **hoàn toàn không cần cài đặt thêm .NET Runtime**:
 
-- 🚀 **1 File `.exe` duy nhất (Zero Setup):** Đã tích hợp sẵn toàn bộ runtime và danh mục 82 phiên bản bên trong file.
+- 🌐 **Tự động Fetch & Đồng bộ phiên bản mới từ GitHub:** Ứng dụng tự động kết nối đến file [`catalog.json`](catalog.json) trên repo để cập nhật danh sách phiên bản và link tải mới nhất. **Về sau khi repo có thêm phiên bản Minecraft hay Loader mới, app sẽ tự động nhận diện và hiển thị ngay mà bạn không cần phải build lại hay tải lại file `.exe`!**
+- 🚀 **1 File `.exe` duy nhất (Zero Setup):** Đã tích hợp sẵn toàn bộ runtime và danh mục dự phòng offline bên trong file.
 - 🔍 **Tự động quét & kiểm tra file ZIP hợp lệ:** Kiểm tra dung lượng và cấu trúc file trong thư mục `data/` trước khi tải để **tránh tải lặp hoặc phát hiện file tải dở/hỏng**.
 - 📊 **Hiển thị thông số thời gian thực:** Thanh tiến trình trực quan, dung lượng (`MB / GB`), tốc độ tải live (`MB/s`, `GB/s`), thời gian đã chạy và thời gian còn lại (ETA).
 - 📥 **Tải hàng loạt (Batch Queue):** Chọn nhiều bản cùng lúc hoặc nhấn "Chọn tất cả" rồi bấm tải tự động.
 - 📂 **Lưu trữ chuẩn xác:** Toàn bộ file tải về được lưu gọn gàng vào thư mục `data/` ngay cạnh file `.exe`.
 
-👉 **Tải trực tiếp file `.exe` độc lập tại đây:** [**`MinecraftCacheDownloader.exe` (Release v1.0.0-downloader)**](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.0.0-downloader)
+👉 **Link Release chính thức:** [**Minecraft Cache Downloader App v1.0.0**](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.0.0-downloader)  
+👉 **Tải trực tiếp 1-Click:** [**`MinecraftCacheDownloader.exe` (Direct Download)**](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.0.0-downloader/MinecraftCacheDownloader.exe)
 
 ---
 
