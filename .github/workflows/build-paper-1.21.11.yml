@@ -1,0 +1,54 @@
+name: Build Paper 1.21.11 Plugin Cache
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'templates/paper-1.21.11/**'
+      - '.github/workflows/build-paper-1.21.11.yml'
+      - '.github/scripts/package_release.py'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x templates/paper-1.21.11/gradlew
+
+      - name: Build Paper 1.21.11 and Cache All Dependencies
+        working-directory: templates/paper-1.21.11
+        run: ./gradlew build --no-daemon
+
+      - name: Verify Offline Build on Linux x64
+        working-directory: templates/paper-1.21.11
+        run: ./gradlew clean build --offline --stacktrace --no-daemon
+
+      - name: Package Linux Cache into <=94MB Chunks and All-in-One Zip
+        run: |
+          python3 .github/scripts/package_release.py \
+            --loader Paper \
+            --mc-version 1.21.11 \
+            --java-version 21 \
+            --project-dir templates/paper-1.21.11 \
+            --dist-dir dist
+
+      - name: Create or Update GitHub Release with Artifacts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v1.21.11-paper dist/* \
+            --title "Paper 1.21.11 Linux x64 Offline Cache" \
+            --notes "Pre-cached Paper 1.21.11 Plugin Workspace with Temurin JDK 21 Linux x64 in <=94MB zip chunks for Gemini Web." \
+            || gh release upload v1.21.11-paper dist/* --clobber

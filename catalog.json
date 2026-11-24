@@ -654,5 +654,13 @@
     "fileName": "Forge_26.3_Offline_GeminiWeb.zip",
     "size": 1301098777,
     "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v26.3-forge/Forge_26.3_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.11-paper",
+    "loader": "Paper",
+    "version": "1.21.11",
+    "fileName": "Paper_1.21.11_Offline_GeminiWeb.zip",
+    "size": 395000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.11-paper/Paper_1.21.11_Offline_GeminiWeb.zip"
   }
 ]

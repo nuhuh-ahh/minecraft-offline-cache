@@ -1,0 +1,7 @@
+name: ExamplePaperPlugin
+version: '${version}'
+main: com.example.paperplugin.PaperPluginTemplate
+api-version: '1.21'
+author: AkumiYuukii
+description: 100% Offline Paper 1.21.11 Plugin Template for Gemini Web
+website: https://github.com/nuhuh-ahh/minecraft-offline-cache

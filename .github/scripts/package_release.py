@@ -37,7 +37,7 @@ def filter_tar(tarinfo):
 
 def main():
     parser = argparse.ArgumentParser(description='Universal Minecraft Cache Packager for Gemini Web')
-    parser.add_argument('--loader', required=True, choices=['Fabric', 'Forge'], help='Mod loader')
+    parser.add_argument('--loader', required=True, choices=['Fabric', 'Forge', 'Paper'], help='Mod loader')
     parser.add_argument('--mc-version', required=True, help='Minecraft version, e.g. 1.9.4')
     parser.add_argument('--java-version', required=True, choices=['8', '16', '17', '21', '25'], help='Java version')
     parser.add_argument('--project-dir', required=True, help='Path to project template directory')

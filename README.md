@@ -298,6 +298,12 @@ For Windows users who want an effortless way to browse and download these offlin
 | 37 | **Forge 26.2** | Forge | Java 25 (Oracle) | [v26.2-forge](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v26.2-forge) | ✅ 100% Offline |
 | 38 | **Forge 26.3** | Forge | Java 25 (Oracle) | [v26.3-forge](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v26.3-forge) | ✅ 100% Offline |
 
+### 📜 Paper Releases (PaperMC Plugin Workspace)
+
+| # | Version | Loader | JDK | Direct Release Link | Status |
+| :-: | :--- | :--- | :--- | :--- | :-: |
+| 1 | **Paper 1.21.11** | Paper | Java 21 | [v1.21.11-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.21.11-paper) | ✅ 100% Offline |
+
 ---
 
 ## ⚖️ Copyright & License
