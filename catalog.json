@@ -662,5 +662,221 @@
     "fileName": "Paper_1.21.11_Offline_GeminiWeb.zip",
     "size": 391678262,
     "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.11-paper/Paper_1.21.11_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.8.8-paper",
+    "loader": "Paper",
+    "version": "1.8.8",
+    "fileName": "Paper_1.8.8_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.8.8-paper/Paper_1.8.8_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.9.4-paper",
+    "loader": "Paper",
+    "version": "1.9.4",
+    "fileName": "Paper_1.9.4_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.9.4-paper/Paper_1.9.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.10.2-paper",
+    "loader": "Paper",
+    "version": "1.10.2",
+    "fileName": "Paper_1.10.2_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.10.2-paper/Paper_1.10.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.11.2-paper",
+    "loader": "Paper",
+    "version": "1.11.2",
+    "fileName": "Paper_1.11.2_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.11.2-paper/Paper_1.11.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.12.2-paper",
+    "loader": "Paper",
+    "version": "1.12.2",
+    "fileName": "Paper_1.12.2_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.12.2-paper/Paper_1.12.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.13.2-paper",
+    "loader": "Paper",
+    "version": "1.13.2",
+    "fileName": "Paper_1.13.2_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.13.2-paper/Paper_1.13.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.14.4-paper",
+    "loader": "Paper",
+    "version": "1.14.4",
+    "fileName": "Paper_1.14.4_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.14.4-paper/Paper_1.14.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.15.2-paper",
+    "loader": "Paper",
+    "version": "1.15.2",
+    "fileName": "Paper_1.15.2_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.15.2-paper/Paper_1.15.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.16.5-paper",
+    "loader": "Paper",
+    "version": "1.16.5",
+    "fileName": "Paper_1.16.5_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.16.5-paper/Paper_1.16.5_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.17.1-paper",
+    "loader": "Paper",
+    "version": "1.17.1",
+    "fileName": "Paper_1.17.1_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.17.1-paper/Paper_1.17.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.18.2-paper",
+    "loader": "Paper",
+    "version": "1.18.2",
+    "fileName": "Paper_1.18.2_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.18.2-paper/Paper_1.18.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.19.4-paper",
+    "loader": "Paper",
+    "version": "1.19.4",
+    "fileName": "Paper_1.19.4_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.19.4-paper/Paper_1.19.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.1-paper",
+    "loader": "Paper",
+    "version": "1.20.1",
+    "fileName": "Paper_1.20.1_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.1-paper/Paper_1.20.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.2-paper",
+    "loader": "Paper",
+    "version": "1.20.2",
+    "fileName": "Paper_1.20.2_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.2-paper/Paper_1.20.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.4-paper",
+    "loader": "Paper",
+    "version": "1.20.4",
+    "fileName": "Paper_1.20.4_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.4-paper/Paper_1.20.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.20.6-paper",
+    "loader": "Paper",
+    "version": "1.20.6",
+    "fileName": "Paper_1.20.6_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.20.6-paper/Paper_1.20.6_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21-paper",
+    "loader": "Paper",
+    "version": "1.21",
+    "fileName": "Paper_1.21_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21-paper/Paper_1.21_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.1-paper",
+    "loader": "Paper",
+    "version": "1.21.1",
+    "fileName": "Paper_1.21.1_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.1-paper/Paper_1.21.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.3-paper",
+    "loader": "Paper",
+    "version": "1.21.3",
+    "fileName": "Paper_1.21.3_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.3-paper/Paper_1.21.3_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.4-paper",
+    "loader": "Paper",
+    "version": "1.21.4",
+    "fileName": "Paper_1.21.4_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.4-paper/Paper_1.21.4_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.7-paper",
+    "loader": "Paper",
+    "version": "1.21.7",
+    "fileName": "Paper_1.21.7_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.7-paper/Paper_1.21.7_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.8-paper",
+    "loader": "Paper",
+    "version": "1.21.8",
+    "fileName": "Paper_1.21.8_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.8-paper/Paper_1.21.8_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.9-paper",
+    "loader": "Paper",
+    "version": "1.21.9",
+    "fileName": "Paper_1.21.9_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.9-paper/Paper_1.21.9_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v1.21.10-paper",
+    "loader": "Paper",
+    "version": "1.21.10",
+    "fileName": "Paper_1.21.10_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v1.21.10-paper/Paper_1.21.10_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v26.1-paper",
+    "loader": "Paper",
+    "version": "26.1",
+    "fileName": "Paper_26.1_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v26.1-paper/Paper_26.1_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v26.2-paper",
+    "loader": "Paper",
+    "version": "26.2",
+    "fileName": "Paper_26.2_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v26.2-paper/Paper_26.2_Offline_GeminiWeb.zip"
+  },
+  {
+    "tag": "v26.3-paper",
+    "loader": "Paper",
+    "version": "26.3",
+    "fileName": "Paper_26.3_Offline_GeminiWeb.zip",
+    "size": 380000000,
+    "downloadUrl": "https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/download/v26.3-paper/Paper_26.3_Offline_GeminiWeb.zip"
   }
 ]

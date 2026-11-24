@@ -1,0 +1,94 @@
+name: Build Paper Legacy Caches
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/build-paper-legacy.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - version: '1.8.8'
+            java: '8'
+          - version: '1.9.4'
+            java: '8'
+          - version: '1.10.2'
+            java: '8'
+          - version: '1.11.2'
+            java: '8'
+          - version: '1.12.2'
+            java: '8'
+          - version: '1.13.2'
+            java: '8'
+          - version: '1.14.4'
+            java: '8'
+          - version: '1.15.2'
+            java: '8'
+          - version: '1.16.5'
+            java: '8'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 8 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '8'
+
+      - name: Set up JDK 17 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up JDK 21 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Set up Oracle JDK 25
+        if: matrix.java == '25'
+        uses: oracle-actions/setup-java@v1
+        with:
+          website: oracle.com
+          release: 25
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x templates/paper-${{ matrix.version }}/gradlew
+
+      - name: Build Paper ${{ matrix.version }} and Cache All Dependencies
+        working-directory: templates/paper-${{ matrix.version }}
+        run: ./gradlew build --no-daemon
+
+      - name: Verify Offline Build on Linux x64
+        working-directory: templates/paper-${{ matrix.version }}
+        run: ./gradlew clean build --offline --stacktrace --no-daemon
+
+      - name: Package Linux Cache into <=94MB Chunks and All-in-One Zip
+        run: |
+          python3 .github/scripts/package_release.py \
+            --loader Paper \
+            --mc-version ${{ matrix.version }} \
+            --java-version ${{ matrix.java }} \
+            --project-dir templates/paper-${{ matrix.version }} \
+            --dist-dir dist
+
+      - name: Create or Update GitHub Release with Artifacts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v${{ matrix.version }}-paper dist/* \
+            --title "Paper ${{ matrix.version }} Linux x64 Offline Cache" \
+            --notes "Pre-cached Paper ${{ matrix.version }} Plugin Workspace with Temurin/Oracle JDK ${{ matrix.java }} Linux x64 in <=94MB zip chunks for Gemini Web." \
+            || gh release upload v${{ matrix.version }}-paper dist/* --clobber

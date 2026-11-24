@@ -1,0 +1,8 @@
+# ======================================================================
+# ExamplePaperPlugin Configuration (Paper 1.21.11)
+# Created by AkumiYuukii for Gemini Web 100% Offline Build Environments
+# ======================================================================
+
+welcome-message: "&a[Paper 1.21.11] &fHello from ExamplePaperPlugin running offline on Gemini Web!"
+enable-join-broadcast: true
+join-message-format: "&b[Server] &fWelcome &e{player} &fto our Paper 1.21.11 server!"

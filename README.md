@@ -204,7 +204,7 @@ For Windows users who want an effortless way to browse and download these offlin
 
 ---
 
-## 📦 RELEASES CATALOG (82 VERSIONS)
+## 📦 RELEASES CATALOG (110 VERSIONS)
 
 ### 🧵 Fabric Releases (44 Versions)
 
@@ -298,11 +298,38 @@ For Windows users who want an effortless way to browse and download these offlin
 | 37 | **Forge 26.2** | Forge | Java 25 (Oracle) | [v26.2-forge](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v26.2-forge) | ✅ 100% Offline |
 | 38 | **Forge 26.3** | Forge | Java 25 (Oracle) | [v26.3-forge](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v26.3-forge) | ✅ 100% Offline |
 
-### 📜 Paper Releases (PaperMC Plugin Workspace)
+### 📜 Paper Releases (28 Versions - PaperMC Plugin Workspace)
 
 | # | Version | Loader | JDK | Direct Release Link | Status |
-| :-: | :--- | :--- | :--- | :--- | :-: |
+| :-: | :--- | :--- | :-: | :--- | :-: |
 | 1 | **Paper 1.21.11** | Paper | Java 21 | [v1.21.11-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.21.11-paper) | ✅ 100% Offline |
+| 2 | **Paper 1.8.8** | Paper | Java 8 | [v1.8.8-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.8.8-paper) | ✅ 100% Offline |
+| 3 | **Paper 1.9.4** | Paper | Java 8 | [v1.9.4-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.9.4-paper) | ✅ 100% Offline |
+| 4 | **Paper 1.10.2** | Paper | Java 8 | [v1.10.2-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.10.2-paper) | ✅ 100% Offline |
+| 5 | **Paper 1.11.2** | Paper | Java 8 | [v1.11.2-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.11.2-paper) | ✅ 100% Offline |
+| 6 | **Paper 1.12.2** | Paper | Java 8 | [v1.12.2-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.12.2-paper) | ✅ 100% Offline |
+| 7 | **Paper 1.13.2** | Paper | Java 8 | [v1.13.2-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.13.2-paper) | ✅ 100% Offline |
+| 8 | **Paper 1.14.4** | Paper | Java 8 | [v1.14.4-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.14.4-paper) | ✅ 100% Offline |
+| 9 | **Paper 1.15.2** | Paper | Java 8 | [v1.15.2-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.15.2-paper) | ✅ 100% Offline |
+| 10 | **Paper 1.16.5** | Paper | Java 8 | [v1.16.5-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.16.5-paper) | ✅ 100% Offline |
+| 11 | **Paper 1.17.1** | Paper | Java 16 | [v1.17.1-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.17.1-paper) | ✅ 100% Offline |
+| 12 | **Paper 1.18.2** | Paper | Java 17 | [v1.18.2-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.18.2-paper) | ✅ 100% Offline |
+| 13 | **Paper 1.19.4** | Paper | Java 17 | [v1.19.4-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.19.4-paper) | ✅ 100% Offline |
+| 14 | **Paper 1.20.1** | Paper | Java 17 | [v1.20.1-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.20.1-paper) | ✅ 100% Offline |
+| 15 | **Paper 1.20.2** | Paper | Java 17 | [v1.20.2-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.20.2-paper) | ✅ 100% Offline |
+| 16 | **Paper 1.20.4** | Paper | Java 17 | [v1.20.4-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.20.4-paper) | ✅ 100% Offline |
+| 17 | **Paper 1.20.6** | Paper | Java 21 | [v1.20.6-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.20.6-paper) | ✅ 100% Offline |
+| 18 | **Paper 1.21** | Paper | Java 21 | [v1.21-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.21-paper) | ✅ 100% Offline |
+| 19 | **Paper 1.21.1** | Paper | Java 21 | [v1.21.1-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.21.1-paper) | ✅ 100% Offline |
+| 20 | **Paper 1.21.3** | Paper | Java 21 | [v1.21.3-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.21.3-paper) | ✅ 100% Offline |
+| 21 | **Paper 1.21.4** | Paper | Java 21 | [v1.21.4-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.21.4-paper) | ✅ 100% Offline |
+| 22 | **Paper 1.21.7** | Paper | Java 21 | [v1.21.7-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.21.7-paper) | ✅ 100% Offline |
+| 23 | **Paper 1.21.8** | Paper | Java 21 | [v1.21.8-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.21.8-paper) | ✅ 100% Offline |
+| 24 | **Paper 1.21.9** | Paper | Java 21 | [v1.21.9-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.21.9-paper) | ✅ 100% Offline |
+| 25 | **Paper 1.21.10** | Paper | Java 21 | [v1.21.10-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v1.21.10-paper) | ✅ 100% Offline |
+| 26 | **Paper 26.1** | Paper | Java 25 (Oracle) | [v26.1-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v26.1-paper) | ✅ 100% Offline |
+| 27 | **Paper 26.2** | Paper | Java 25 (Oracle) | [v26.2-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v26.2-paper) | ✅ 100% Offline |
+| 28 | **Paper 26.3** | Paper | Java 25 (Oracle) | [v26.3-paper](https://github.com/nuhuh-ahh/minecraft-offline-cache/releases/tag/v26.3-paper) | ✅ 100% Offline |
 
 ---
 
